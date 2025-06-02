@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:illumina/screens/main_page.dart';
-import 'package:illumina/screens/map_screen.dart';
-import 'package:illumina/screens/report_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'screens/main_page.dart';
+import 'screens/map_screen.dart';
+import 'screens/report_screen.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
