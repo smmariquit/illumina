@@ -5,6 +5,8 @@ import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geocoding/geocoding.dart';
 import '../utils/location_utils.dart';
+import '../api/report_api.dart';
+import '../models/report.dart';
 
 class ReportScreen extends StatefulWidget {
   const ReportScreen({super.key});
@@ -217,7 +219,7 @@ class _ReportScreenState extends State<ReportScreen> {
 
               // Submit Button
               ElevatedButton(
-                onPressed: () {
+                onPressed: () async {
                   if (_formKey.currentState!.validate()) {
                     if (_image == null) {
                       ScaffoldMessenger.of(context).showSnackBar(
@@ -235,13 +237,41 @@ class _ReportScreenState extends State<ReportScreen> {
                       );
                       return;
                     }
-                    // TODO: Implement report submission
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('Report submitted')),
-                    );
+                    setState(() => _isLoading = true);
+                    try {
+                      final report = PoorLightingReport(
+                        description: _descriptionController.text,
+                        imagePath: _image!.path,
+                        latitude: _currentPosition!.latitude,
+                        longitude: _currentPosition!.longitude,
+                        timestamp: DateTime.now(),
+                      );
+                      await ReportApi.submitReport(report, _image!);
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('Report submitted!')),
+                      );
+                      setState(() {
+                        _image = null;
+                        _currentPosition = null;
+                        _descriptionController.clear();
+                      });
+                    } catch (e) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text(
+                            'Failed to submit report: \\${e.toString()}',
+                          ),
+                        ),
+                      );
+                    } finally {
+                      setState(() => _isLoading = false);
+                    }
                   }
                 },
-                child: const Text('Submit Report'),
+                child:
+                    _isLoading
+                        ? const CircularProgressIndicator()
+                        : const Text('Submit Report'),
               ),
             ],
           ),
