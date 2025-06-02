@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:firebase_ml_vision/firebase_ml_vision.dart';
 import 'package:geocoding/geocoding.dart';
 import '../utils/location_utils.dart';
 import '../api/report_api.dart';
@@ -44,6 +45,21 @@ class _ReportScreenState extends State<ReportScreen> {
         setState(() {
           _image = File(pickedFile.path);
         });
+
+        // --- Firebase ML Vision Processing ---
+        // TODO: Create an InputImage from the picked image file.
+        // Example: final InputImage inputImage = InputImage.fromFile(_image!);
+
+        // TODO: Get an instance of your desired ML model (e.g., ImageLabeler)
+        // Example: final ImageLabeler labeler = FirebaseVision.instance.imageLabeler();
+
+        // TODO: Process the image with the ML model.
+        // Example: final List<ImageLabel> labels = await labeler.processImage(inputImage);
+
+        // TODO: Handle the results to identify dark spots.
+        // This will involve iterating through the labels and their confidence scores.
+
+        // TODO: Store the dark spot information as needed (e.g., in a variable).
       }
     } catch (e) {
       ScaffoldMessenger.of(
