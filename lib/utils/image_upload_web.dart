@@ -25,13 +25,13 @@ Future<String> uploadImagePlatformWeb(
     // Initialize Firebase app if not already initialized
     if (fb.apps.isEmpty) {
       fb.initializeApp(
-        apiKey: 'YOUR_API_KEY',
-        authDomain: 'YOUR_PROJECT_ID.firebaseapp.com',
-        databaseURL: 'https://YOUR_PROJECT_ID.firebaseio.com',
-        projectId: 'YOUR_PROJECT_ID',
-        storageBucket: firebaseStorageBucket,
-        messagingSenderId: 'YOUR_SENDER_ID',
-        appId: 'YOUR_APP_ID',
+        apiKey: "AIzaSyDnXdm-YHLdQS-8E0Hnmfgg5E0TClOkiiE",
+        authDomain: "illumina-spark-pup.firebaseapp.com",
+        projectId: "illumina-spark-pup",
+        storageBucket: "illumina-spark-pup.appspot.com",
+        messagingSenderId: "560333200922",
+        appId: "1:560333200922:web:b9d826cc91a0ae4b137ba3",
+        measurementId: "G-1DQ4B8E02Z",
       );
     }
     final timestamp = DateTime.now().millisecondsSinceEpoch;
