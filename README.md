@@ -1,16 +1,50 @@
-# illumina
+# Illumina: Designing Cities for People
 
-A new Flutter project.
+**A computer vision-powered platform to light up our cities.**  
+Empowering SDG 11 & 16 through real-time mapping, hazard reporting, and community-driven safety insights.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## Tech Stack
 
-A few resources to get you started if this is your first Flutter project:
+- **Flutter** (cross-platform: Android, iOS, Web)
+- **Firebase** (Firestore, Storage, Auth)
+- **Google Cloud Vision API**
+- **Google Maps Platform**
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Architecture
+
+```mermaid
+graph LR
+    A[Flutter App] -->|REST/SDK| B[Firebase (Firestore, Storage, Auth)]
+    A -->|API| C[Google Cloud Vision]
+    A -->|API| D[Google Maps]
+```
+```
+
+---
+
+## Deployment
+
+### 🌐 **Try the Web App**
+[project-illumina.netlify.app](https://project-illumina.netlify.app)  
+*Just click and use!*
+
+### 🖥️ **Run Locally (Flutter)**
+1. Clone the repo and run:
+   ```bash
+   flutter pub get
+   flutter run -d chrome # or -d android, -d ios
+   ```
+
+---
+
+## About
+
+Illumina is Phase 1 of the Design Cities for People Initiative (DCPI)—a civic tech project using computer vision and real-time data to make urban spaces safer and more accountable.
+
+---
+
+*Bigyan nating liwanag ang ating mga siyudad tungo sa makataong disenyo.*
