@@ -1,17 +1,22 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.illumina">
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
     <uses-permission android:name="android.permission.INTERNET"/>
     
     <application
-    android:debuggable="${debuggable}"
+    android:debuggable="false"
+        android:enableOnBackInvokedCallback="true"
+        
         android:label="illumina"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <!-- Add your Google Maps API Key here -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBn8OGFDODo5xJBBxIGeA-nPEjbQ2GeaiA"/>
+            android:value="@string/google_maps_key"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"

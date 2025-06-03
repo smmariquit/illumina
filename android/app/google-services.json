@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "560333200922",
+    "project_id": "illumina-spark-pup",
+    "storage_bucket": "illumina-spark-pup.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:560333200922:android:6837b5aac7db3dff137ba3",
+        "android_client_info": {
+          "package_name": "com.example.illumina"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVXezzT-J1KbS87WTvorHB7wkBMqBKUlE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
