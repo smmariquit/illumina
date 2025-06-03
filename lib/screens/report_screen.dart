@@ -148,74 +148,45 @@ class _ReportScreenState extends State<ReportScreen> {
             ),
           );
 
-          // Use CloudVisionUtils to detect street lamp
+          // Use CloudVisionUtils to detect objects (show all, no filter)
           final objects = await CloudVisionUtils.detectObjects(bytes);
           print('Detected objects: $objects');
 
-          final lightingLabels = [
-            'lamp',
-            'light',
-            'streetlight',
-            'street lamp',
-            'street light',
-            'lighting',
-            'light fixture',
-            'pole',
-            'light pole',
-            'post',
-          ];
-
-          final filteredObjects = <Map<String, dynamic>>[];
-          for (final object in objects) {
-            final name = object['name'].toString().toLowerCase();
-            if (lightingLabels.any((lampLabel) => name.contains(lampLabel))) {
-              // Brightness calculation for web skipped for now
-              filteredObjects.add({...object, 'brightness': null});
-            }
-          }
-          setState(() {
-            _detectedObjects = filteredObjects;
-            _isLoading = false;
-          });
-
-          final foundStreetLamp = objects.any(
-            (object) => lightingLabels.any(
-              (lampLabel) => object['name'].toLowerCase().contains(lampLabel),
-            ),
-          );
-
-          if (foundStreetLamp) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
-                content: Row(
-                  children: [
-                    Icon(Icons.check_circle, color: Colors.green),
-                    SizedBox(width: 8),
-                    Text('Street lamp detected!'),
-                  ],
-                ),
-                backgroundColor: Colors.green,
-              ),
-            );
-          } else {
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
-                content: Row(
-                  children: [
-                    Icon(Icons.warning_amber_rounded, color: Colors.orange),
-                    SizedBox(width: 8),
-                    Expanded(
-                      child: Text(
-                        'No light source detected in the image. Describe the lighting conditions and any safety concerns',
-                      ),
+          // Show dialog with all detected objects
+          showDialog(
+            context: context,
+            builder:
+                (context) => AlertDialog(
+                  title: const Text('Detected Objects'),
+                  content:
+                      objects.isEmpty
+                          ? const Text('No objects detected.')
+                          : Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children:
+                                objects.map<Widget>((obj) {
+                                  final name = obj['name'] ?? 'Unknown';
+                                  final score =
+                                      obj['score'] != null
+                                          ? (obj['score'] * 100)
+                                              .toStringAsFixed(1)
+                                          : 'N/A';
+                                  return Text('- $name ($score%)');
+                                }).toList(),
+                          ),
+                  actions: [
+                    TextButton(
+                      onPressed: () => Navigator.of(context).pop(),
+                      child: const Text('OK'),
                     ),
                   ],
                 ),
-                backgroundColor: Colors.orange,
-                duration: Duration(seconds: 5),
-              ),
-            );
-          }
+          );
+
+          setState(() {
+            _isLoading = false;
+          });
         }
       });
       return;
