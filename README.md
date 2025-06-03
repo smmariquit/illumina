@@ -20,16 +20,16 @@ Empowering SDG 11 & 16 through real-time mapping, hazard reporting, and communit
 flowchart TB
 
 %% Icons
-    flutter[<img src="https://assets-global.website-files.com/6047a9e35e5dc54ac86ddd90/63018720eab248248ff88ee3_1bd86e15.png" width="10px"/> Flutter UI]
-    material[<img src="https://www.kindpng.com/picc/m/101-1010609_google-material-design-logo-material-design-logo-png.png" width="30"/> Material Design]
+    flutter[<img src="assets/flutter.png" width="10px"/> Flutter UI]
+    material[<img src="assets/m3.png" width="30"/> Material Design]
     widgets[Custom Widgets]
     provider[Provider]
     api[API Layer]
-    firebase[<img src="https://firebase.google.com/downloads/brand-guidelines/PNG/logo-logomark.png" width="30"/> Firebase]
+    firebase[<img src="assets/firebase.png" width="30"/> Firebase]
     auth[Authentication]
     firestore[Firestore]
     storage[Storage]
-    gcp[<img src="https://logos-world.net/wp-content/uploads/2021/02/Google-Cloud-Emblem.png" width="30"/> Google Cloud Platform]
+    gcp[<img src="assets/gcp.png" width="30"/> Google Cloud Platform]
     maps[Google Maps API]
     vision[Cloud Vision API]
 
