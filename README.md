@@ -1,5 +1,7 @@
 # Illumina: Designing Cities for People
 
+## Sparkfest 2025
+
 **A computer vision-powered platform to light up our cities.**  
 Empowering SDG 11 & 16 through real-time mapping, hazard reporting, and community-driven safety insights.
 
