@@ -1,3 +1,5 @@
+// web/functions/src/genkit-sample.ts
+
 // Import the Genkit core libraries and plugins.
 import {genkit, z} from "genkit";
 import {vertexAI} from "@genkit-ai/vertexai";
