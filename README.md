@@ -27,50 +27,50 @@ Empowering SDG 11 & 16 through real-time mapping, hazard reporting, and communit
 
 ```mermaid
 flowchart TB
-    flutter[Flutter UI]
-    material[Material Design]
-    widgets[Custom Widgets]
-    provider[Provider]
-    api[API Layer]
-    firebase[Firebase]
-    auth[Authentication]
-    firestore[Firestore]
-    storage[Storage]
-    gcp[Google Cloud Platform]
-    maps[Google Maps API]
-    vision[Cloud Vision API]
+ flutter[Flutter UI]
+ material[Material Design]
+ widgets[Custom Widgets]
+ provider[Provider]
+ api[API Layer]
+ firebase[Firebase]
+ auth[Authentication]
+ firestore[Firestore]
+ storage[Storage]
+ gcp[Google Cloud Platform]
+ maps[Google Maps API]
+ vision[Cloud Vision API]
 
-    subgraph Frontend["Frontend"]
-        flutter
-        material
-        widgets
-    end
+ subgraph Frontend["Frontend"]
+ flutter
+ material
+ widgets
+ end
 
-    subgraph State["State & API Layer"]
-        provider
-        api
-    end
+ subgraph State["State & API Layer"]
+ provider
+ api
+ end
 
-    subgraph Backend["Backend"]
-        firebase
-        auth
-        firestore
-        storage
-    end
+ subgraph Backend["Backend"]
+ firebase
+ auth
+ firestore
+ storage
+ end
 
-    subgraph Cloud["Google Cloud Platform"]
-        gcp --> maps
-        gcp --> vision
-    end
+ subgraph Cloud["Google Cloud Platform"]
+ gcp --> maps
+ gcp --> vision
+ end
 
-    flutter --> material
-    flutter --> widgets
-    flutter --> provider --> api --> firebase
-    firebase --> auth & firestore & storage
-    firebase --> gcp
+ flutter --> material
+ flutter --> widgets
+ flutter --> provider --> api --> firebase
+ firebase --> auth & firestore & storage
+ firebase --> gcp
 
-    Frontend --> State
-    State --> Backend
+ Frontend --> State
+ State --> Backend
 ```
 
 ---
@@ -84,9 +84,9 @@ flowchart TB
 ### 🖥️ **Run Locally (Flutter)**
 1. Clone the repo and run:
  ```bash
-   flutter pub get
-   flutter run -d chrome # or -d android, -d ios
-   ```
+ flutter pub get
+ flutter run -d chrome # or -d android, -d ios
+ ```
 
 ---
 
