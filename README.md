@@ -2,7 +2,7 @@
 
 ## Sparkfest 2025
 
-**A computer vision-powered platform to light up our cities.**  
+**A computer vision-powered platform to light up our cities.** 
 Empowering SDG 11 & 16 through real-time mapping, hazard reporting, and community-driven safety insights.
 
 ---
@@ -18,11 +18,11 @@ Empowering SDG 11 & 16 through real-time mapping, hazard reporting, and communit
 
 ### Architecture
 
-<!-- Logos (optional, for visual appeal) -->
+<!, Logos (optional, for visual appeal), >
 <p align="center">
-  <img src="https://raw.githubusercontent.com/smmariquit/illumina/main/assets/flutter.png" alt="Flutter" height="32"/>
-  <img src="https://raw.githubusercontent.com/smmariquit/illumina/main/assets/firebase.png" alt="Firebase" height="32"/>
-  <img src="https://raw.githubusercontent.com/smmariquit/illumina/main/assets/gcp.png" alt="GCP" height="32"/>
+ <img src="https://raw.githubusercontent.com/smmariquit/illumina/main/assets/flutter.png" alt="Flutter" height="32"/>
+ <img src="https://raw.githubusercontent.com/smmariquit/illumina/main/assets/firebase.png" alt="Firebase" height="32"/>
+ <img src="https://raw.githubusercontent.com/smmariquit/illumina/main/assets/gcp.png" alt="GCP" height="32"/>
 </p>
 
 ```mermaid
@@ -78,12 +78,12 @@ flowchart TB
 ## Deployment
 
 ### 🌐 **Try the Web App**
-[project-illumina.netlify.app](https://project-illumina.netlify.app)  
+[project-illumina.netlify.app](https://project-illumina.netlify.app) 
 *Just click and use!*
 
 ### 🖥️ **Run Locally (Flutter)**
 1. Clone the repo and run:
-   ```bash
+ ```bash
    flutter pub get
    flutter run -d chrome # or -d android, -d ios
    ```
@@ -92,7 +92,7 @@ flowchart TB
 
 ## About
 
-Illumina is Phase 1 of the Design Cities for People Initiative (DCPI)—a civic tech project using computer vision and real-time data to make urban spaces safer and more accountable.
+Illumina is Phase 1 of the Design Cities for People Initiative (DCPI): a civic tech project using computer vision and real-time data to make urban spaces safer and more accountable.
 
 ---
 
@@ -102,7 +102,6 @@ Illumina is Phase 1 of the Design Cities for People Initiative (DCPI)—a civic 
 - **Tech Stack:** Static / Basic Scripts
 - **Repository Size:** 273 tracked files
 - **Latest Update:** `c399f2d chore: add stale issue and PR validators`
-
 
 ---
 *☕ If you found this project useful, you can support my work at [kape.stimmie.dev](https://kape.stimmie.dev)!*
