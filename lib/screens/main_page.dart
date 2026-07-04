@@ -1,4 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+Future<void> _openLegalUrl(String url) async {
+  final uri = Uri.parse(url);
+  if (await canLaunchUrl(uri)) {
+    await launchUrl(uri, mode: LaunchMode.externalApplication);
+  }
+}
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
@@ -49,6 +57,22 @@ class MainPage extends StatelessWidget {
               'Quickly access and call your emergency contacts',
               Icons.contacts,
               () => Navigator.pushNamed(context, '/contacts'),
+            ),
+            const SizedBox(height: 24),
+            const Divider(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextButton(
+                  onPressed: () => _openLegalUrl('https://uplbtools.me/privacy'),
+                  child: const Text('Privacy Policy'),
+                ),
+                const Text('·', style: TextStyle(color: Colors.grey)),
+                TextButton(
+                  onPressed: () => _openLegalUrl('https://uplbtools.me/terms'),
+                  child: const Text('Terms of Service'),
+                ),
+              ],
             ),
           ],
         ),
